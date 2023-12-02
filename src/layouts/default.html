@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head }}
+</head>
+<body id="container">
+    <canvas id="canvas" style="
+        height: 100% !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        z-index: -100;
+    "></canvas>
+    {{> header }}
+    <div class="container">
+
+    <h1 class="gradient-text">Об истории и не только....</h1>
+    </div>
+    <div class="page__mask" onclick="mask()"></div>
+    <main class="main">
+        <div class="container container--flex">
+            {{> sidebar-left }}
+            <div class="inner">
+                {{> body }}
+            </div>
+            {{> sidebar-right }}
+        </div>
+        {{> footer }}
+    </main>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="assets/js/back.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+    const pageMask = document.querySelector(".page__mask")
+    const nav = document.querySelector(".nav__big__left")
+    const navBut = document.querySelector(".nav")
+    function myFunction(){
+        nav.classList.toggle("active")
+        pageMask.classList.toggle("active")
+    }
+    function mask(){
+        nav.classList.remove("active")
+        pageMask.classList.remove("active")
+        navBut.classList.remove("active")
+        console.log("h")
+    }
+</script>
+</body>
+</html>
